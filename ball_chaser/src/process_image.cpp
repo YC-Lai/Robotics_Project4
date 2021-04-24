@@ -67,9 +67,9 @@ void process_image::process_image_callback(const sensor_msgs::Image img) {
 
     float ball_area = ball_in_l + ball_in_c + ball_in_r;
     float image_area = img.height * img.width;
-    auto ball = 10 * ball_area / image_area;
+    auto ball = ball_area / image_area;
     ROS_INFO("ball %1.5f", ball);
-    if (ball < 0.5 && ball > 0) {
+    if (ball < 0.15 && ball > 0) {
         if (ball_in_l / ball_area > 0.5) {
             ROS_INFO_STREAM("turn left...");
             drive_robot(0.5, 0.5);
