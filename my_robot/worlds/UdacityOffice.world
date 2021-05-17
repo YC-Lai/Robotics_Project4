@@ -1,6 +1,7 @@
 <sdf version='1.6'>
   <world name='default'>
     <plugin name='welcome_msg' filename='libwelcome_msg.so'/>
+    <plugin filename="libcollision_map_creator.so" name="collision_map_creator"/>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose frame=''>0 0 10 0 -0 0</pose>
